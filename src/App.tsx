@@ -5,6 +5,7 @@ import { Input } from './components/Input'
 import { Button } from './components/Button'
 
 import styles from './app.module.css'
+import { LettersUsed } from './components/LettersUsed'
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
 
           <Button title="Confirmar" onClick={() => {}} />
         </div>
+
+        <LettersUsed />
       </main>
     </div>
   )
