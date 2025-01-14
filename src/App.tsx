@@ -2,6 +2,7 @@ import { Header } from './components/Header'
 
 import styles from './app.module.css'
 import { Tip } from './components/Tip'
+import { Letter } from './components/Letter'
 
 function App() {
 
@@ -14,6 +15,8 @@ function App() {
       <main>
         <Header current={5} max={10} onRestart={handleRestartGame} />
         <Tip tip="Uma das linguagens de programação mais utilizadas no mundo" />
+
+        <Letter value="J" />
       </main>
     </div>
   )
