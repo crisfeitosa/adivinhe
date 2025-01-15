@@ -8,11 +8,12 @@ import { Tip } from './components/Tip'
 import { Letter } from './components/Letter'
 import { Input } from './components/Input'
 import { Button } from './components/Button'
-import { LettersUsed } from './components/LettersUsed'
+import { LettersUsed, LettersUsedProps } from './components/LettersUsed'
 
 function App() {
   const [letter, setLetter] = useState("");
   const [attempts, setAttempts] = useState(0);
+  const [lettersUsed, setLettersUsed] = useState<LettersUsedProps[]>([]);
   const [challenge, setChallenge] = useState<Challenge | null>(null);
 
   function handleRestartGame() {
@@ -45,8 +46,8 @@ function App() {
         <Tip tip="Uma das linguagens de programação mais utilizadas no mundo" />
 
         <div className={styles.word}>
-          {challenge.word.split("").map(() => (
-            <Letter value="" />
+          {challenge.word.split("").map((letter, index) => (
+            <Letter key={`${letter}-${index}`} value="" />
           ))}
         </div>
 
@@ -58,7 +59,7 @@ function App() {
           <Button title="Confirmar" onClick={() => {}} />
         </div>
 
-        <LettersUsed />
+        <LettersUsed data={lettersUsed} />
       </main>
     </div>
   )
